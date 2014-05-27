@@ -7,7 +7,12 @@
 
 ### Set Up ###
 
-* Para instalar copie para o terminal : ```https://github.com/filipefernandes007/ruthphp.git``` 
+* Instalação
+	Para instalar copie para o terminal : ```https://github.com/filipefernandes007/ruthphp.git``` 
+
+	Agora vamos instalar as dependências via composer: ```php composer.phar install``` ou ```sudo composer install``` se já tiver instalado o composer. 
+	(se não tiver instalado o composer vá a: https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable)
+
 * Configuração:
 	A configuração da aplicação é feita no ficheiro ``application/config/config.ini``, que deve ter o seguinte formato:
 	
