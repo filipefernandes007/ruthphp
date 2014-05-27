@@ -7,13 +7,13 @@
 
 ### Set Up ###
 
-* Instalação
+* #Instalação#
 	Para instalar copie para o terminal : ```https://github.com/filipefernandes007/ruthphp.git``` 
 
 	Agora vamos instalar as dependências via composer: ```php composer.phar install``` ou ```sudo composer install``` se já tiver instalado o composer. 
 	(se não tiver instalado o composer vá a: https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable)
 
-* Configuração:
+* #Configuração#
 	A configuração da aplicação é feita no ficheiro ``application/config/config.ini``, que deve ter o seguinte formato:
 	
 	```
@@ -37,7 +37,7 @@
 	
 	Em ```application/config/php-settings``` definir as configurações de php.ini para debug ou outros.
 	
-* Template, Layout e Views
+* #Template, Layout e Views#
 
 	Uma view vai dar forma aos dados. Podemos criá-la em public/containers:
 
@@ -109,7 +109,7 @@
 
 	Deste modo a view vai ser renderizada no template que por sua vez vai ser injectado no layout definido em config.ini.
 
-* Models e VO's
+* #Models e VO's#
 
 	Para que os dados sejam carregados devidamente nas views, devem ser criados models e vo's, que deverão habitar em application/models e application/models/vo.
 
@@ -141,16 +141,13 @@
 	Existem já métodos pré-definidos para ```getById(int), delete(SqlParam), update(SqlParam) e insert(SqlParam)```.
 	
 	
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* #Consola#
+	Os ficheiros criados pela consola encontram-se na pasta tmp-files.
 
-### Contribution guidelines ###
+	``bin/console --write-vo [tabela da base de dados]`` 	: para escrever o ficheiro que representa o VO de uma tabela da base de dados
+	``bin/console --write-models [tabela da base de dados]``: para escrever o ficheiro que representa o VO e o Model de uma tabela da base de dados
+	``bin/console --write-models``						 	: para escrever os VO's e os Models que representam a base de dados
 
-* Writing tests
-* Code review
-* Other guidelines
 
 ### Who do I talk to? ###
 
