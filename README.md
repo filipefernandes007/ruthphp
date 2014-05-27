@@ -175,7 +175,7 @@
     As chamadas directas a métodos na query do url é sempre feita com ```<modelo>.<nome do método>```, ou seja, separados por ponto.
     Depois será preciso indicar a forma como vão ser visualizados os dados: xml ou json, o que é feito no parâmetro *args*.
 
-    Se quiséssemos que esses dados fossem injectados numa view, bastaria indicar ``&view=ViewAll``, por exemplo.
+    Se quiséssemos que esses dados fossem injectados numa view, bastaria indicar ``&view=ViewAll``, por exemplo. Neste caso, ficaria acessível na view através de ``$this->data``.
 
 ### Who do I talk to? ###
 
