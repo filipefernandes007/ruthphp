@@ -145,7 +145,9 @@
 	Os ficheiros criados pela consola encontram-se na pasta tmp-files.
 
 	``bin/console --write-vo [tabela da base de dados]`` 	: para escrever o ficheiro que representa o VO de uma tabela da base de dados
+
 	``bin/console --write-models [tabela da base de dados]``: para escrever o ficheiro que representa o VO e o Model de uma tabela da base de dados
+	
 	``bin/console --write-models``						 	: para escrever os VO's e os Models que representam a base de dados
 
 
