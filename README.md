@@ -138,7 +138,7 @@
 		    ...
 	````
 
-	Existem já métodos pré-definidos para getById(int), delete(SqlParam), update(SqlParam) e insert(SqlParam).
+	Existem já métodos pré-definidos para ```getById(int), delete(SqlParam), update(SqlParam) e insert(SqlParam)```.
 	
 	
 * Dependencies
