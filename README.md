@@ -36,7 +36,7 @@
 
 	Uma view vai dar forma aos dados. Podemos criá-la em public/containers:
 
-	``
+	````
 	<div id="myCarousel" class="carousel slide">
 	    <div class="carousel-inner">
 	        <?php foreach($this->data as $planet): ?>
@@ -56,7 +56,7 @@
 	    <a class="left carousel-control" href="#" data-slide="prev">‹</a>
 	    <a class="right carousel-control" href="#" data-slide="next">›</a>
 	</div><!-- /.carousel -->
-	``
+	````
 
 	Para carregar a view devemos criar uma View em application/views:
 
