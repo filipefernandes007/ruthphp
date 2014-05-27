@@ -7,13 +7,13 @@
 
 ### Set Up ###
 
-* #Instalação#
+* ##Instalação##
 	Para instalar copie para o terminal : ```https://github.com/filipefernandes007/ruthphp.git``` 
 
 	Agora vamos instalar as dependências via composer: ```php composer.phar install``` ou ```sudo composer install``` se já tiver instalado o composer. 
 	(se não tiver instalado o composer vá a: https://getcomposer.org/doc/00-intro.md#downloading-the-composer-executable)
 
-* #Configuração#
+* ##Configuração##
 	A configuração da aplicação é feita no ficheiro ``application/config/config.ini``, que deve ter o seguinte formato:
 	
 	```
@@ -37,7 +37,7 @@
 	
 	Em ```application/config/php-settings``` definir as configurações de php.ini para debug ou outros.
 	
-* #Template, Layout e Views#
+* ##Template, Layout e Views##
 
 	Uma view vai dar forma aos dados. Podemos criá-la em public/containers:
 
@@ -109,7 +109,7 @@
 
 	Deste modo a view vai ser renderizada no template que por sua vez vai ser injectado no layout definido em config.ini.
 
-* #Models e VO's#
+* ##Models e VO's##
 
 	Para que os dados sejam carregados devidamente nas views, devem ser criados models e vo's, que deverão habitar em application/models e application/models/vo.
 
@@ -141,15 +141,40 @@
 	Existem já métodos pré-definidos para ```getById(int), delete(SqlParam), update(SqlParam) e insert(SqlParam)```.
 	
 	
-* #Consola#
+* ##Consola##
 	Os ficheiros criados pela consola encontram-se na pasta tmp-files.
 
 	``bin/console --write-vo [tabela da base de dados]`` 	: para escrever o ficheiro que representa o VO de uma tabela da base de dados
 
 	``bin/console --write-models [tabela da base de dados]``: para escrever o ficheiro que representa o VO e o Model de uma tabela da base de dados
-	
+
 	``bin/console --write-models``						 	: para escrever os VO's e os Models que representam a base de dados
 
+* ##Anotações##
+	Nas anotações podemos restringir o acesso a um método através da segunite sintaxe:
+
+	```
+
+	/**
+	 * [Session]
+	 * [Roles (0,1)]
+	 * [allowRaw(production)]
+	 */
+	public function getById($i) {
+	 	return parent::getById($i);
+	}
+
+    ```
+
+    Neste caso estamos a dizer que o método exige sessão de login, e que só pode ser acedido por utilizadores com "roles" 0 ou 1.
+
+    Há ainda uma outra anotação, `` [allowRaw(production)] ``, que indica que é possível obter o resultado em json, xml ou 'raw'
+    da chamada a ``getById``. Por exemplo estando autenticado (login efectuado com sucesso), podíamos obter os dados com ``http://my-application/?call=ModelXYZ.getById&args=1&type=json``.
+
+    As chamadas directas a métodos na query do url é sempre feita com o <modelo>.<nome do método>, ou seja, separados por ponto.
+    Depois será preciso indicar a forma como vão ser visualizados os dados: xml ou json, o que é feito no parâmetro ``args``.
+
+    Se quiséssemos que esses dados fossem injectados numa view, bastaria indicar ``&view=ViewAll``, por exemplo.
 
 ### Who do I talk to? ###
 
