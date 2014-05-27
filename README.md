@@ -30,7 +30,7 @@
 	
 	Em allwaysAllowRaw colocar a true se queremos visualizar os resultados de uma query no ecrã.
 	
-	Em ``application/config/php-settings`` definir as configurações de php.ini para debug ou outros.
+	Em ```application/config/php-settings``` definir as configurações de php.ini para debug ou outros.
 	
 * Template, Layout e Views
 
@@ -56,11 +56,11 @@
 	    <a class="left carousel-control" href="#" data-slide="prev">‹</a>
 	    <a class="right carousel-control" href="#" data-slide="next">›</a>
 	</div><!-- /.carousel -->
-	````
+	```
 
 	Para carregar a view devemos criar uma View em application/views:
 
-	``
+	````
 		...
 		$this->name       = $data->name;
         $this->images     = $images;
@@ -72,11 +72,11 @@
 
         // renderizar o layout
         return new LayoutPlanet(array('view' => $this->view, 'data' => $data));
-	``
+	````
 
 	Por seu turno, LayoutPlanet deve derivar de um template, que foi definido pelo programador como ATemplate, e guardado em application/templates:
 
-	``
+	````
 		class ATemplate extends Template {
         
 	        protected function init($args = null) {
@@ -100,7 +100,7 @@
 	        }
 	        
 	    }
-	``
+	````
 
 	Deste modo a view vai ser renderizada no template que por sua vez vai ser injectado no layout definido em config.ini.
 
@@ -110,7 +110,7 @@
 
 	Os models devem derivar de ``Model``. Devem ter o seguinte formato:
 
-	``
+	````
 		class ModelPlanet extends Model {
 
 		    public function ModelPlanet() {
@@ -131,7 +131,7 @@
 		    }
 
 		    ...
-	``
+	````
 
 	Existem já métodos pré-definidos para getById(int), delete(SqlParam), update(SqlParam) e insert(SqlParam).
 	
