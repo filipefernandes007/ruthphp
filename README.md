@@ -169,10 +169,11 @@
     Neste caso estamos a dizer que o método exige sessão de login, e que só pode ser acedido por utilizadores com "roles" 0 ou 1.
 
     Há ainda uma outra anotação, `` [allowRaw(production)] ``, que indica que é possível obter o resultado em json, xml ou 'raw'
-    da chamada a ``getById``. Por exemplo estando autenticado (login efectuado com sucesso), podíamos obter os dados com ``http://my-application/?call=ModelXYZ.getById&args=1&type=json``.
+    da chamada a ``getById``. Por exemplo estando autenticado (login efectuado com sucesso), podíamos obter os dados com:
+    ``http://my-application/?call=ModelXYZ.getById&args=1&type=json``.
 
-    As chamadas directas a métodos na query do url é sempre feita com o <modelo>.<nome do método>, ou seja, separados por ponto.
-    Depois será preciso indicar a forma como vão ser visualizados os dados: xml ou json, o que é feito no parâmetro ``args``.
+    As chamadas directas a métodos na query do url é sempre feita com ```<modelo>.<nome do método>```, ou seja, separados por ponto.
+    Depois será preciso indicar a forma como vão ser visualizados os dados: xml ou json, o que é feito no parâmetro *args*.
 
     Se quiséssemos que esses dados fossem injectados numa view, bastaria indicar ``&view=ViewAll``, por exemplo.
 
