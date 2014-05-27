@@ -1,0 +1,19 @@
+{
+    "name": "vendor/ruthphp",
+    "description": "RuthPHP uma framework php com base no padrão de desenho MVVM",
+    "authors": [
+        {
+            "name": "ffernandes",
+            "email": "filipefernandes007@gmail.com"
+        }
+    ],
+    "require": {
+        "components/jquery": "dev-master",
+        "twitter/bootstrap": "dev-master",
+        "components/backbone": "dev-master",
+        "components/underscore": "dev-master"
+    },
+    "config": {
+        "component-dir": "public/js/lib"
+    }
+}

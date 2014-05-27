@@ -1,0 +1,88 @@
+<style type="text/css">
+    
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+    }
+
+    .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    }
+    .form-signin .form-signin-heading,
+    .form-signin .checkbox {
+        margin-bottom: 10px;
+    }
+    .form-signin input[type="text"],
+    .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+    }
+    .error {
+        color:red;
+    }
+    .navbar {
+        display: none;
+    }
+
+</style>
+
+<div class="container">
+    <form id="myForm" class="form-signin" action="/modules/cms/?call=Logger.login" method="POST">
+        <h2 class="form-signin-heading">Login</h2>
+        <input data-field="object" type="text" name="username" class="input-block-level" placeholder="username" />
+        <input data-field="object" type="password" id="password" name="password" class="input-block-level" placeholder="password" />
+        <div><h4 class="error"></h4></div>
+        <button class="submit btn btn-large" name="submit" type="submit">Send</button>
+    </form>
+</div> <!-- /container -->
+
+<script>
+    
+    function UserVO(vo) {
+        if(vo) {
+            this.username = vo.username;
+            this.password = vo.password;
+        }
+    }
+
+    $(".submit").bind("click", function(e) {
+        e.preventDefault();
+        
+        var hash = CryptoJS.SHA1($("#password").val());
+        
+        $("#password").val(hash);
+        
+        var form = js.createObject(formObj);
+        
+        form.sendForm("myForm", "Logger.login&type=json", UserVO, sucessHandler, errorHandler);
+        
+        hash = null;
+    });
+
+    function sucessHandler(data) {
+        if(data.length == 0) {
+            $(".error").text("Erro no login! Queira tentar novamente por favor.");
+        } else {
+            $(".error").text("Sucesso no login! A reencaminhar...");
+            window.location = "/modules/cms/?view=ViewCmsDefault"
+        }
+    }
+    
+    function errorHandler(data) {
+        $(".error").text(data.responseText);
+    }
+
+</script>

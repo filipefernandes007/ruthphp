@@ -1,0 +1,39 @@
+
+if (!defined("LAYOUT_FOLDER"))
+    define("LAYOUT_FOLDER", realpath(dirname(__FILE__) . DIRECTORY_SEPARATOR . "layout") . DIRECTORY_SEPARATOR);
+
+if(!defined("PUBLIC_FOLDER"))
+    define("PUBLIC_FOLDER", "");
+
+if (!defined("PRESENTERS_LAYOUT"))
+    define("PRESENTERS_LAYOUT", realpath(dirname(__FILE__)));
+
+if(!defined("APPLICATION"))
+    define("APPLICATION", ROOT . "application");
+
+if(!defined("CORE"))
+    define("CORE", ROOT . "core");
+
+if(!defined("CORE_LIB"))
+    define("CORE_LIB", CORE . DIRECTORY_SEPARATOR . "lib");
+
+if(!defined("CONFIG"))
+    define("CONFIG", APPLICATION . DIRECTORY_SEPARATOR . "config");
+
+if(!defined("MODULES"))
+    define("MODULES", APPLICATION . DIRECTORY_SEPARATOR . "modules");
+
+$http_post   = isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : "localhost";
+$request_uri = isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] : "";
+
+if (!defined("URL"))
+    define("URL", $http_post . $request_uri);
+
+define("DEVELOPMENT", "development");
+define("STAGING", "staging");
+define("PRODUCTION", "production");
+
+require_once(CORE . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "Config.php");        // carregar as configurações
+require_once(CORE . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "AutoLoad.php");
+require_once(CORE . DIRECTORY_SEPARATOR . "controllers" . DIRECTORY_SEPARATOR . "Controller.php");
+require_once(CORE . DIRECTORY_SEPARATOR . "controllers" . DIRECTORY_SEPARATOR . "RPC.php");

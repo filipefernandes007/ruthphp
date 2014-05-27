@@ -1,0 +1,19 @@
+<div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+        {CONTENT}
+    </div>
+    <a class="left carousel-control" href="#" data-slide="prev">‹</a>
+    <a class="right carousel-control" href="#" data-slide="next">›</a>
+</div><!-- /.carousel -->
+
+<script>
+    $('.carousel-control.left').click(function() {
+        $('#myCarousel').carousel('prev');
+    });
+
+    $('.carousel-control.right').click(function() {
+        $('#myCarousel').carousel('next');
+    });
+    
+    $('.item').eq(0).addClass('active');
+</script>

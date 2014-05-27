@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+	DocumentRoot "/Users/Filipe/Sites/solar-system/public" # root do projecto, onde espera encontra index.php
+	ServerName solar-system.local # será este o nome a colocar no ficheiro hosts
+	<Directory "/Users/Filipe/Sites/solar-system/public"> # a única pasta acessível ao público
+		Options Indexes FollowSymLinks 
+		AllowOverride All
+		Order allow,deny
+		Allow from all
+	</Directory>
+	Alias /modules/cms/Users/Filipe/Sites/solar-system/application/modules/cms/public
+</VirtualHost>

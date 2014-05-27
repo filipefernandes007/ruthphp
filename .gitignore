@@ -1,0 +1,10 @@
+/public/images/
+/public/js
+/components
+/public/bootstrap
+/public/css
+/nbproject
+/vendor
+/tmp-files/vo/*
+/tmp-files/models/*
+.DS_Store
