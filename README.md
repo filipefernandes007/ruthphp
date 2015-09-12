@@ -2,7 +2,7 @@
 
 ### O que é RuthPHP? ###
 
-* RuthPHP é uma framework PHP com base no padrão de desenho MVVM.
+* RuthPHP é uma framework PHP com base no padrão de desenho MVVM e orientada ao Modelo.
 * 1.0.0
 
 ### Set Up ###
